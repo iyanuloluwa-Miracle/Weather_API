@@ -25,7 +25,7 @@ const signup = async (req, res) => {
     await newUser.save();
 
     // Generate token
-    const token = jwt.sign({ id: newUser._id, username: newUser.username }, jwtSecret, { expiresIn: '1h' });
+    const token = jwt.sign({ id: newUser._id, username: newUser.username }, jwtSecret, { expiresIn: '2h' });
 
     res.json({ token });
   } catch (error) {

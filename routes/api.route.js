@@ -7,7 +7,7 @@ router.get('/', async (req, res, next) => {
   res.send({ message: 'Ok api is working 🚀' });
 });
 //Route for the weather Routes
-router.get('/weather',authMiddleware.authenticateToken, weatherController.getWeather)
+router.get('/weather', weatherController.getWeather)
 router.post('/location', authMiddleware.authenticateToken, weatherController.updateLocation)
 
 //Routes for the auth

@@ -43,7 +43,7 @@ Copy code
     "temp": 298.68,
     "humidity": 80
   },
-  // Additional weather forecast data
+ 
 }
 ```
 
@@ -62,3 +62,65 @@ Retrieves the weather forecast data based on the country name.
 
 Example Request:
 
+Authentication: Required
+Example Request:
+```json
+GET /api/weather?country=United%20States HTTP/1.1
+Authorization: Bearer <access_token>
+```
+
+Example Response:
+
+```json
+
+{
+  "coord": {
+    "lon": -95.7129,
+    "lat": 37.0902
+  },
+  "weather": [
+    {
+      "id": 800,
+      "main": "Clear",
+      "description": "clear sky",
+      "icon": "01d"
+    }
+  ],
+  "main": {
+    "temp": 297.17,
+    "humidity": 68
+  },
+  
+}
+```
+
+Authentication
+
+To access the API endpoints, you need to include a valid JSON Web Token (JWT) in the Authorization header of your requests. The JWT should be included in the format Bearer <access_token>.
+
+
+To obtain an access token, you need to authenticate with the API using the /api/login endpoint. This endpoint requires the following parameters:
+
+username: The username of the user.
+password: The password of the user.
+
+Example Request:
+```json
+POST /api/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "your_username",
+  "password": "your_password"
+}
+```
+
+Example Response:
+```json
+
+{
+  "token": "<access_token>"
+}
+```
+
+Include the obtained access token in the Authorization header of subsequent requests to the weather API endpoints.

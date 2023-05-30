@@ -123,4 +123,26 @@ Example Response:
 }
 ```
 
-Include the obtained access token in the Authorization header of subsequent requests to the weather API endpoints.
+### Include the obtained access token in the Authorization header of subsequent requests to the weather API endpoints.
+
+Error Responses
+400 Bad Request: When the required query parameters (lat, lon, or country) are missing or invalid.
+401 Unauthorized: When authentication credentials are missing or invalid.
+404 Not Found: When the weather forecast data is not available for the provided coordinates or country.
+500 Internal Server Error: When there is a failure in fetching the weather forecast.
+
+Setup
+Clone the repository and navigate to the project directory.
+Install the dependencies using npm install.
+Rename the .env.example file to .env and update the environment variables with your configuration.
+Start the server using npm start.
+The API will be available at http://localhost:3000/api.
+Make sure to replace <access_token> in the example requests with your actual access token.
+
+Environment Variables
+The following environment variables need to be defined in the .env file:
+
+API_KEY: Your OpenWeatherMap API key.
+JWT_SECRET: Secret key used for signing JWTs.
+License
+This project is licensed under the MIT License.

@@ -93,7 +93,7 @@ Example Response:
 }
 ```
 
-Authentication
+# Authentication
 
 To access the API endpoints, you need to include a valid JSON Web Token (JWT) in the Authorization header of your requests. The JWT should be included in the format Bearer <access_token>.
 
@@ -104,10 +104,10 @@ username: The username of the user.
 password: The password of the user.
 
 Example Request:
-```json
+
 POST /api/login HTTP/1.1
 Content-Type: application/json
-
+```json
 {
   "username": "your_username",
   "password": "your_password"
@@ -124,7 +124,7 @@ Example Response:
 
 ### Include the obtained access token in the Authorization header of subsequent requests to the weather API endpoints.
 
-Error Responses
+# Error Responses
 400 Bad Request: When the required query parameters (lat, lon, or country) are missing or invalid.
 401 Unauthorized: When authentication credentials are missing or invalid.
 404 Not Found: When the weather forecast data is not available for the provided coordinates or country.

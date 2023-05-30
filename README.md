@@ -20,5 +20,5 @@ Retrieves the weather forecast data based on latitude and longitude coordinates.
 GET /api/weather?lat=37.7749&lon=-122.4194 HTTP/1.1
 Authorization: Bearer <access_token>
 
-**Example Response:**
+Example Response:
 { "coord": { "lon": -122.4194, "lat": 37.7749 }, "weather": [ { "id": 801, "main": "Clouds", "description": "few clouds", "icon": "02d" } ], "main": { "temp": 298.68, "humidity": 80 }, // Additional weather forecast data }
